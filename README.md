@@ -14,7 +14,7 @@
 
 <p align="center"><img src="docs/teaser.png" width="100%"></p>
 
-See2Act is a diffusion policy that refines *where to look* together with *what to do*. Every denoising step
+See2Act is a diffusion model that refines *where to look* together with *what to do*. Every denoising step
 moves the camera to a pose computed from the current action estimate, renders the scene from there, and
 conditions the next step on that view, so the policy recovers even when the target is hidden from the initial
 view. This repository contains the method and the four occluded Ravens tasks of the paper: simulator,
