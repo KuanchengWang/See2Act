@@ -1,0 +1,13 @@
+# Python 3.9. Install PyTorch for your CUDA version first, e.g.
+#   pip install torch==2.1.1 torchvision==0.16.1 --index-url https://download.pytorch.org/whl/cu121
+torch>=2.1
+torchvision>=0.16
+numpy>=1.24,<2
+scipy>=1.10
+h5py>=3.8
+pybullet==3.2.6
+opencv-python>=4.8
+transforms3d>=0.4
+tensorboard>=2.13
+tqdm>=4.65
+huggingface_hub>=0.34

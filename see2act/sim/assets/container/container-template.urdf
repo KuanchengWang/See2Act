@@ -1,0 +1,187 @@
+<?xml version="1.0" ?>
+<robot name="container_multi_link">
+  <link name="base_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.02"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+  </link>
+
+  <!-- Bottom face -->
+  <link name="bottom">
+    <contact>
+      <lateral_friction value="0.3"/>
+      <rolling_friction value="0.0001"/>
+      <inertia_scaling value="3.0"/>
+    </contact>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.02"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="DIM0 DIM1 .002"/>
+      </geometry>
+      <material name="brown">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="DIM0 DIM1 .002"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Front face -->
+  <link name="front">
+    <contact>
+      <lateral_friction value="0.3"/>
+      <rolling_friction value="0.0001"/>
+      <inertia_scaling value="3.0"/>
+    </contact>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.02"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="DIM0 .002 DIM2"/>
+      </geometry>
+      <material name="brown">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="DIM0 .002 DIM2"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Back face -->
+  <link name="back">
+    <contact>
+      <lateral_friction value="0.3"/>
+      <rolling_friction value="0.0001"/>
+      <inertia_scaling value="3.0"/>
+    </contact>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.02"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="DIM0 .002 DIM2"/>
+      </geometry>
+      <material name="brown">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="DIM0 .002 DIM2"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Left face -->
+  <link name="left">
+    <contact>
+      <lateral_friction value="0.3"/>
+      <rolling_friction value="0.0001"/>
+      <inertia_scaling value="3.0"/>
+    </contact>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.02"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size=".002 DIM1 DIM2"/>
+      </geometry>
+      <material name="brown">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size=".002 DIM1 DIM2"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Right face -->
+  <link name="right">
+    <contact>
+      <lateral_friction value="0.3"/>
+      <rolling_friction value="0.0001"/>
+      <inertia_scaling value="3.0"/>
+    </contact>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.02"/>
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size=".002 DIM1 DIM2"/>
+      </geometry>
+      <material name="brown">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size=".002 DIM1 DIM2"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- Fixed joints to connect all faces to base_link -->
+  <joint name="bottom_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="bottom"/>
+    <origin xyz="0 0 -HALF2"/>
+  </joint>
+
+  <joint name="front_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="front"/>
+    <origin xyz="0 -HALF1 0"/>
+  </joint>
+
+  <joint name="back_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="back"/>
+    <origin xyz="0 HALF1 0"/>
+  </joint>
+
+  <joint name="left_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="left"/>
+    <origin xyz="-HALF0 0 0"/>
+  </joint>
+
+  <joint name="right_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="right"/>
+    <origin xyz="HALF0 0 0"/>
+  </joint>
+
+</robot>

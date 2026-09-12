@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+runs/
+results/
+data/
+checkpoints/
+*.hdf5
+*.pth
+.pytest_cache/
+
+media/

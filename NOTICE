@@ -1,0 +1,16 @@
+This repository contains code and assets derived from third-party projects.
+
+Ravens (https://github.com/google-research/ravens)
+  Copyright 2023 The Ravens Authors. Licensed under the Apache License, Version 2.0.
+  The simulator package `see2act/sim` (environment, task base class, suction gripper, pick-and-place
+  primitive, heightmap utilities) and the assets under `see2act/sim/assets` (block, bowl, container
+  template, plane, workspace, suction gripper) are adapted from Ravens. A copy of the Apache License 2.0
+  is available at http://www.apache.org/licenses/LICENSE-2.0.
+
+UR5 robot model (see2act/sim/assets/ur5)
+  Original work Copyright 2018 ROS Industrial; modified work Copyright 2018 Virtana, Inc.
+  Licensed under the Apache License, Version 2.0 (see see2act/sim/assets/ur5/license.txt).
+
+robomimic (https://github.com/ARISE-Initiative/robomimic), MIT License
+  The FiLM-conditioned ResNet-18 encoder and the training utilities were originally written on top of
+  robomimic; the versions in this repository are self-contained re-implementations.

@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "see2act"
+version = "1.0.0"
+description = "See2Act: diffusion policies with active viewpoint inference for imitation learning under occlusion"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+dependencies = [
+  "torch>=2.1", "torchvision>=0.16", "numpy>=1.24,<2", "scipy>=1.10", "h5py>=3.8", "pybullet==3.2.6",
+  "opencv-python>=4.8", "transforms3d>=0.4", "tensorboard>=2.13", "tqdm>=4.65", "huggingface_hub>=0.34",
+]
+
+[tool.setuptools.packages.find]
+include = ["see2act*"]
+
+[tool.setuptools.package-data]
+"see2act" = ["assets/*.npz"]
+"see2act.sim" = ["assets/**/*"]

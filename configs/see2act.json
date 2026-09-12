@@ -1,0 +1,6 @@
+{
+  "experiment": {"name": "see2act", "output_dir": "runs", "save_every_n_epochs": 2000, "save_best_validation": true},
+  "train": {"batch_size": 50, "num_epochs": 30000, "learning_rate": 1e-4, "renderer_workers": 14},
+  "diffusion": {"num_refinement_steps": 50},
+  "camera": {"init_view": "front", "offset": 0.6, "jitter": true}
+}
